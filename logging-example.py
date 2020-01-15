@@ -2,11 +2,11 @@ import logging
 import math
 
 # Create and configure logger
-LOG_FORMAT = "%(Levelname)s %(asctime)s - %(message)s"
-logging.basicConfig(filename = example_log.txt,
+LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
+logging.basicConfig(filename = 'logging-example.log',
                     level = logging.DEBUG,
                     format = LOG_FORMAT,
-                    filemode = 'a')
+                    filemode = 'w')
 logger = logging.getLogger()
 
 # Test messages
@@ -18,7 +18,7 @@ logger.critical("critical")
 
 def quadratic_formula(a, b, c):
     """Return the solutions to the equation ax^2 + bx + c = 0."""
-    logger.info("quadratic formula({0}, {1}, {2})").format(a, b, c)
+    logger.info("quadratic formula({0}, {1}, {2})".format(a, b, c))
 
     # Compute the discriminant.
     disc = b**2 - 4*a*c
